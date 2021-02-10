@@ -32,7 +32,7 @@ exports.editFriends = (req, res, next) => {
     console.log("editFriendsPangolin.");
     console.log(req.body.tabFriends);
     Pangolin.updateOne({ idUser: req.body.userId }, {
-        ami: req.body.tabFriends
+        amis: req.body.tabFriends
     })
     .then(() => res.status(200).json({ message: 'Liste d amis modifiée !'}))
     .catch(error => res.status(400).json({ error }));
