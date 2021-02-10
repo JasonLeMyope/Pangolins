@@ -1,5 +1,6 @@
 const User = require("../models/user");
 const Pangolin = require("../models/pangolin");
+const bcrypt = require('bcrypt');
 
 exports.showInfos = (req, res, next) => {
     console.log("ShowInfos.");
@@ -30,7 +31,6 @@ exports.listPangolins = (req, res, next) => {
 
 exports.editFriends = (req, res, next) => {
     console.log("editFriendsPangolin.");
-    console.log(req.body.tabFriends);
     Pangolin.updateOne({ idUser: req.body.userId }, {
         amis: req.body.tabFriends
     })

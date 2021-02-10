@@ -11,7 +11,7 @@ exports.signup = (req, res, next) => {
         password: hash
       });
       user.save()
-        .then(() => res.status(201).json({ message: 'Utilisateur créé !' }))
+        .then(() => res.status(201).json(user))
         .catch(error => res.status(400).json({ error }));
       const pangolin = new Pangolin({
         idUser: user._id,
